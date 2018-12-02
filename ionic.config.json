@@ -1,5 +1,7 @@
 {
   "name": "cynthAPI",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

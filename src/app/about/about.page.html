@@ -1,7 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>About</ion-title>
+  <ion-toolbar color="dark">
+    <!-- <ion-title >View Data</ion-title> -->
+    <ion-button (click)="getlogs()">
+        Getlogs
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content color="dark">
+
+
+<ion-list *ngIf="this.logdatas != null">
+    <ion-item-sliding color="dark" #item *ngFor="let p of this.logdatas.data">
+      <ion-item color="dark">
+        <ion-col col-10>
+            <a class="note">{{p.note}} </a>
+      </ion-col>
+      <ion-col col-2>
+        <a class="time">
+          {{p.created | date}}
+        </a>
+      </ion-col>
+  
+      </ion-item>
+      <!-- <ion-item-options side="left"> -->
+        <!-- <button ion-button color="danger" (click)="delete(p.id)">Delete</button> -->
+      <!-- </ion-item-options> -->
+      
+      <ion-item-options side="right">
+          <!-- <button ion-button color="secondary "(click)="delete(item)">Edit</button> -->
+        <button ion-button color="primary" (click)="delete(p.id)">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

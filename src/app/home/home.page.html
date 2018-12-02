@@ -1,10 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title>Sendit</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+<ion-content padding color="dark">
+	<ion-item color="light" >
+<ion-input type="text" type="text" [(ngModel)]="inputDatum" name="title"></ion-input>
+</ion-item>
+<ion-button  type="submit" size='full' (click)='log()'>Sendit</ion-button>
 </ion-content>
